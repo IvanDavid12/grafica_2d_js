@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #miCanvas{
+            border:  dotted 5px yellow;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Graficas 2D con HTML y Javascript</h1>
+    <canvas id="miCanvas" width="500px" height="300px">Tu navegador no soporta </canvas>
+    <script>
+        
+        window.onload = function()
+        {
+            var canvas = document.getElementById("miCanvas")
+
+            const BASE = 500;
+            const ALTURA = 300;
+
+            canvas.width = BASE
+            canvas.height = ALTURA
+
+            if(canvas && canvas.getContext)
+            {
+                var ctx = canvas.getContext("2d")
+                if (ctx){
+
+                    var imagen=new Image();
+                    //
+                    function procesaImagen()
+                    {
+                        ctx.drawImage(imagen,230,70,140,70);
+
+                    }
+                    //
+                    imagen.src= "./img/persona.png";
+                    imagen.onload =function(e){
+                        procesaImagen();
+                    }
+
+                    ctx.strokeStyle = "black"
+                    ctx.beginPath()
+                    ctx.lineWidth = 5
+                    ctx.arc(70,210,40,0, 2*Math.PI, false)
+                    ctx.fill()
+                    ctx.stroke()
+
+                    //alert("Bienvenido al canvas")
+                    ctx.fillStyle = '#8B0000'
+                    ctx.strokeStyle = '#A52A2A'
+                    ctx.lineWidth = 15;
+                    ctx.fillRect(99,150,320,120)
+                    
+                    //dibujar rectangulo
+                    ctx.fillStyle =("white");
+                    ctx.fillRect(270,65,120,80);
+                    ctx.strokeRect(270,65,120,80);
+
+                    ctx.fillStyle =("#8B0000");
+                    ctx.fillRect(70,168,120,80);
+                    ctx.strokeRect(270,65,120,80);
+                    
+                    ctx.fillStyle =("white");
+                    ctx.fillRect(50,161,30,100);
+                    ctx.strokeRect(270,65,120,80);
+                    
+
+                    ctx.fillStyle =("black")
+                    ctx.fillRect(150,75,40,75)
+                    ctx.strokeRect(270,65,120,80)
+
+                    ctx.fillStyle =("grey");
+                    ctx.beginPath()
+                    ctx.lineWidth = 5
+                    ctx.arc(250,250,30,0, 2*Math.PI, false)
+                    ctx.fill()
+                    ctx.stroke()
+
+                    ctx.strokeStyle = "black"
+                    ctx.beginPath()
+                    ctx.lineWidth = 5
+                    ctx.arc(350,250,40,0, 2*Math.PI, false)
+                    ctx.fill()
+                    ctx.stroke()
+
+                    ctx.fillStyle =("grey");
+                    ctx.beginPath()
+                    ctx.lineWidth = 5
+                    ctx.arc(350,250,30,0, 2*Math.PI, false)
+                    ctx.fill()
+                    ctx.stroke()
+
+                    ctx.strokeStyle = "black"
+                    ctx.beginPath()
+                    ctx.lineWidth = 5
+                    ctx.arc(150,250,40,0, 2*Math.PI, false)
+                    ctx.fill()
+                    ctx.stroke()
+
+                    ctx.fillStyle =("grey");
+                    ctx.beginPath()
+                    ctx.lineWidth = 5
+                    ctx.arc(150,250,30,0, 2*Math.PI, false)
+                    ctx.fill()
+                    ctx.stroke()
+
+
+                    ctx.beginPath()
+                    ctx.lineWidth = 5
+                    ctx.arc(250,250,40,0, 2*Math.PI, false)
+                    ctx.fill()
+                    ctx.stroke()
+
+                    ctx.fillStyle =("grey");
+                    ctx.beginPath()
+                    ctx.lineWidth = 5
+                    ctx.arc(250,250,30,0, 2*Math.PI, false)
+                    ctx.fill()
+                    ctx.stroke()
+
+                    ctx.fillStyle =("red");
+                    ctx.fillRect(230,30,190,30);
+                    ctx.strokeRect(270,65,120,80);
+
+                    ctx.fillStyle =("red");
+                    ctx.fillRect(280,10,99,60);
+                    ctx.strokeRect(270,65,120,80);
+
+                    ctx.fillStyle =("grey");                    
+                    ctx.fillRect(140,230,90,20);
+                    ctx.strokeRect(140,230,90,20);
+
+                    ctx.fillStyle =("grey");
+                    ctx.fillRect(270,250,90,20);
+                    ctx.strokeRect(270,250,90,20);
+
+                
+                    ctx.font = "3em calibri"
+                    ctx.lineWhidth = 1,0
+
+                    ctx.strokeStyle = "grey"
+                    //
+                    ctx.shadowColor = "black"
+                    ctx.shadowOffsetX = 5 
+                    ctx.shadowOffsetY =5
+                    ctx.shadowBlur = 10
+                    //
+                    ctx.fillText  ("ivan david R.S",120,190)
+                    ctx.strokeText("ivan david R.S",120,190)
+
+
+
+                }
+                else{
+                    alert("Error al crear el contexto")
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

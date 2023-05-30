@@ -1,1 +1,2 @@
-# grafica_2d_js
+# EL TREN
+![tren](/img/tren.png)
