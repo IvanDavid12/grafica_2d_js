@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #miCanvas{
+            border:  dotted 5px yellow;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Graficas 2D con HTML y Javascript</h1>
+    <canvas id="miCanvas" width="500px" height="300px">Tu navegador no soporta </canvas>
+    <script>
+        
+        window.onload = function()
+        {
+            var canvas = document.getElementById("miCanvas")
+
+            const BASE = 500;
+            const ALTURA = 300;
+
+            canvas.width = BASE
+            canvas.height = ALTURA
+
+            if(canvas && canvas.getContext)
+            {
+                var ctx = canvas.getContext("2d")
+                if (ctx)
+                {
+                    ctx.lineWidth = 5
+                    ctx.strokeStyle = "black"
+                    ctx.fillStyle = "#2d572c "
+                    
+
+                    ctx.beginPath()
+                    ctx.lineWidth = 5
+                    ctx.arc(100,150,48,0, 2*Math.PI, false)
+                    ctx.fill()
+                    ctx.stroke()
+
+
+                    ctx.beginPath()
+                    ctx.lineWidth = 5
+                    ctx.arc(150,150,58,0, 2*Math.PI, false)
+                    ctx.fill()
+                    ctx.stroke()
+
+                    ctx.beginPath()
+                    ctx.lineWidth = 5
+                    ctx.arc(220,150,69,0, 2*Math.PI, false)
+                    ctx.fill()
+                    ctx.stroke()
+
+
+                    ctx.beginPath()
+                    ctx.lineWidth = 5
+                    ctx.arc(300,150,59,0, 2*Math.PI, false)
+                    ctx.fill()
+                    ctx.stroke()
+
+                    ctx.beginPath()
+                    ctx.lineWidth = 5
+                    ctx.arc(360,150,56,0, 2*Math.PI, false)
+                    ctx.fill()
+                    ctx.stroke()
+                    
+
+                    ctx.fillStyle = "black"
+                    ctx.strokeStyle = "white"
+                    ctx.beginPath()
+                    ctx.lineWidth = 5
+                    ctx.arc(380,140,7,0, 2*Math.PI, false)
+                    ctx.fill()
+                    ctx.stroke()
+                    
+                    ctx.fillStyle = "black"
+                    ctx.strokeStyle = "white"
+                    ctx.beginPath()
+                    ctx.lineWidth = 5
+                    ctx.arc(360,140,7,0, 2*Math.PI, false)
+                    ctx.fill()
+                    ctx.stroke()
+
+                    ctx.fillStyle = "#9b1c0f"
+                    ctx.strokeStyle = "red"
+                    ctx.beginPath()
+                    ctx.lineWidth = 5
+                    ctx.arc(370,180,9,3, 2*Math.PI, true)
+                    ctx.fill()
+                    ctx.stroke()
+
+                                    {
+                    ctx.strokeStyle = "black"
+                    ctx.lineWidth = 5
+
+
+                    ctx.strokeStyle = "#2d572a"
+                    ctx.beginPath();
+                    ctx.moveTo(390,150);
+                    ctx.lineTo(350, 150 ,140);
+                    ctx.stroke();
+
+                    ctx.strokeStyle = "black"
+                    ctx.beginPath();
+                    ctx.moveTo(380,99);
+                    ctx.lineTo(350, 50 ,340);
+                    ctx.stroke();
+
+                    ctx.strokeStyle = "black"
+                    ctx.beginPath();
+                    ctx.moveTo(350,99);
+                    ctx.lineTo(310, 50 ,340);
+                    ctx.stroke();
+
+
+                }
+
+
+                }
+                else{
+                    alert("Error al crear el contexto")
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>
